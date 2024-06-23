@@ -1,4 +1,7 @@
-# meet 
+# meet
+# Usage of serverless functions for Meet App.
+Using serverless functions for my meet app will allow me to scale up or down based on demand. This will ensure that my app remains responsive regardless of level of traffic. Using serverless functions will also reduce cost associated with running and maintaining servers 24/7. Payments will only be made when functions are executed. Serverless functions will promote rapid development and development cycles since developers using serverless functions don’t need to worry about managing servers or infrastructure.  
+
 # Feature 1: Filter Events By City
 
 *User Story 1: As a user, I want to see upcoming events from all cities when I haven't searched for a specific city.*

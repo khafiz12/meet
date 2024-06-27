@@ -14,13 +14,13 @@ const App = () => {
  
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
     const allEvents = await getEvents();
-    const filteredEvents = currentCity === "See all cities" ?
-      allEvents :
-      allEvents.filter(event => event.location === currentCity)
+    const filteredEvents = currentCity === "See all cities" 
+    ? allEvents 
+    : allEvents.filter(event => event.location === currentCity)
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
   }
@@ -30,7 +30,7 @@ const App = () => {
    <div className="App">
      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
      <EventList events={events} />
-    <NumberOfEvents />
+    <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE}/>
    </div>
  );
 }

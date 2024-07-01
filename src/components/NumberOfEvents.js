@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 
-const NumberOfEvents = ({ eventsPerPage }) => {
+const NumberOfEvents = ({ eventsPerPage, setErrorAlert }) => {
   const [eventCount, setEventCount] = useState(eventsPerPage);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
     setEventCount(value);
+
+    if (isNaN(value) || value <= 0 ) {
+        setErrorAlert('Please enter a valid number of events.');
+    } else{ 
+        setErrorAlert("");
+    }
   };
 
   return (

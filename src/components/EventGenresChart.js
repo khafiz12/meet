@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react';
-import { ResponsiveContainer ,PieChart, Pie, Legend } from 'recharts';
+import { ResponsiveContainer ,PieChart, Pie, Legend, Cell } from 'recharts';
 
 const EventGenresChart = ({events}) => {
    const [data, setData] = useState ([]);
-   const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular']
+   const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+   const colors = ['#DD0000', '#00DD00', '#0000DD', '#DDDD00', '#DD00DD' ]
    const getData = () => {
     // Map through genres and calculate the number of events for each genre
     const data = genres.map((genre) => {
@@ -49,7 +50,12 @@ const EventGenresChart = ({events}) => {
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={130}           
-        />
+        > 
+        {data.map((entry, index) =>(
+          <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+         ))}
+        </Pie>
+        <Legend verticalAlign="bottom" align="center" />
       </PieChart>
     </ResponsiveContainer>
   );

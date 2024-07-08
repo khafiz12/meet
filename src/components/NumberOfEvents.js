@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const NumberOfEvents = ({ eventsPerPage, setErrorAlert }) => {
-  const [eventCount, setEventCount] = useState(eventsPerPage);
+const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
+  const [eventCount, setEventCount] = useState(currentNOE);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
@@ -11,6 +11,7 @@ const NumberOfEvents = ({ eventsPerPage, setErrorAlert }) => {
         setErrorAlert('Please enter a valid number of events.');
     } else{ 
         setErrorAlert("");
+        setCurrentNOE(value);
     }
   };
 

@@ -1,4 +1,22 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --primary-color: #1877F2;
+  --secondary-color: #42B72A;
+  --text-color: #333;
+  --background-color: #f0f2f5;
+  --border-color: #ccc;
+  --button-hover-color: #e6e6e6;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -19,13 +37,12 @@ p {
 
 input[type="text"],
 input[type="number"] {
-  padding: 8px 6px 8px 10px;
+  padding: 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   font-size: 14px;
   line-height: 20px;
-  align-self: center;
   height: 38px;
   margin-bottom: 20px;
 }
@@ -49,14 +66,15 @@ input[type="number"] {
   align-self: center;
   margin: 0;
   font-size: 14px;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 4px;
 }
 
 .suggestions > li {
   text-align: left;
-  padding: 8px 6px 8px 10px;
-  background-color: #eee;
-  cursor: default;
+  padding: 8px 10px;
+  cursor: pointer;
 }
 
 .suggestions > li:last-child {
@@ -65,41 +83,54 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: var(--button-hover-color);
 }
 
 .event {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 20px;
+  margin: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
-  position: relative;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .details-btn {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  padding: 5px 8px;
+  padding: 10px 20px;
   border-radius: 4px;
+  border: none;
   outline: none;
   cursor: pointer;
-  color: yellow;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: var(--secondary-color);
 }
 
 .show-details {
-   margin-top: 20px;
-   background-color: aqua;
-   cursor: pointer;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.show-details:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
 }
 
 .alerts-container {
   position: fixed;
-  top: 0px;
+  top: 20px;
   left: 20px;
   width: 250px;
   z-index: 1000;
@@ -114,11 +145,13 @@ input[type="number"] {
 
 @media (max-width: 768px) {
   .charts-container {
-    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    grid-template-columns: 1fr;
   }
 }
 
-#event-list{
-  border: solid;
-  border-radius: 5px;  
+#event-list {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white;
 }

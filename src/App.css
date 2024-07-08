@@ -71,6 +71,9 @@ input[type="number"] {
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -91,6 +94,7 @@ input[type="number"] {
 .show-details {
    margin-top: 20px;
    background-color: aqua;
+   cursor: pointer;
 }
 
 .alerts-container {

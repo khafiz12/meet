@@ -43,6 +43,7 @@ const App = () => {
       {infoAlert.length ? <InfoAlert text={infoAlert} />:null} 
       {errorAlert.length ? <ErrorAlert text={errorAlert} />:null }
       {warningAlert.length ? <WarningAlert text={warningAlert} />:null} </div>
+     <h1 className="Meet-header"> Meet APP</h1>
      <CitySearch allLocations={allLocations} 
      setCurrentCity={setCurrentCity} 
      setInfoAlert={setInfoAlert} />

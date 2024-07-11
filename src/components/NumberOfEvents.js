@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
   const [eventCount, setEventCount] = useState(currentNOE);
@@ -7,11 +7,11 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
     const value = event.target.value;
     setEventCount(value);
 
-    if (isNaN(value) || value <= 0 ) {
-        setErrorAlert('Please enter a valid number of events.');
-    } else{ 
-        setErrorAlert("");
-        setCurrentNOE(value);
+    if (isNaN(value) || value <= 0) {
+      setErrorAlert("Please enter a valid number of events.");
+    } else {
+      setErrorAlert("");
+      setCurrentNOE(value);
     }
   };
 

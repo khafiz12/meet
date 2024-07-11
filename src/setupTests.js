@@ -30,7 +30,7 @@ beforeEach(() => {
   }));
 });
 
-afterEach(() => {
+afterAll(() => {
   window.ResizeObserver = ResizeObserver;
   jest.restoreAllMocks();
 });
